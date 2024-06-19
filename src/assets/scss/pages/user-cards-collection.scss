@@ -1,0 +1,18 @@
+@import "../components/utils/card";
+@import "../components/utils/empty-collection";
+
+
+.user-collection-page {
+    margin-top: 3rem;
+
+    h1 {
+        padding-bottom: 1rem;
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 250px));
+        grid-gap: 1.5rem;
+
+    }
+}

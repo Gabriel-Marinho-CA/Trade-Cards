@@ -1,0 +1,122 @@
+@import "../../helpers/variables";
+
+header.header {
+    padding: 1rem;
+    box-shadow: 0px 3px 6px #ceceec;
+
+    .header-wrapper,
+    .header-wrapper .user-actions,
+    .header-wrapper .user-actions .login {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-wrapper {
+        justify-content: space-between;
+
+        .logo {
+            flex: 1;
+            padding-right: 2rem;
+
+            a {
+                display: block;
+                width: fit-content;
+                min-width: 150px;
+
+                @media (max-width:$tablet) {
+                    margin-inline: auto;
+                }
+
+                svg {
+                    width: 100%;
+                }
+            }
+        }
+
+
+        @media (max-width:$tablet) {
+            justify-content: center;
+            gap: 1rem;
+
+
+        }
+
+        .user-actions {
+
+            @media (max-width:$tablet) {
+                display: none;
+            }
+
+            .login {
+                gap: .3rem;
+            }
+
+            nav ul {
+                display: flex;
+                gap: 1.5rem;
+                align-items: center;
+
+                @media (min-width:$tablet) and (max-width: $desktopXS) {
+                    gap: 1rem;
+                }
+
+                li {
+                    a {
+                        color: #000;
+                    }
+
+                    button {
+                        padding: .2rem 1rem;
+                        border-radius: 3px;
+                        background: none;
+                        border: 1px solid red;
+                        color: red;
+                        transition: background-color 0.15s ease-in, color 0.15s ease-out;
+
+                        &:hover {
+                            background-color: red;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .wrapper-menu-mobile {
+        display: none;
+
+        @media (max-width:$tablet) {
+            display: block;
+        }
+
+        .menu-mobile {
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: #fff;
+            box-shadow: 0px 3px 6px #cecece;
+            transition: transform .4s ease;
+            transform: translateX(-100%);
+            padding: 1rem;
+            z-index: 1;
+
+            .close-menu-btn {
+                text-align: end;
+                padding-bottom: 1rem;
+            }
+
+            .user-actions {
+                display: block;
+
+                ul {
+                    flex-direction: column;
+                }
+            }
+
+            &.active {
+                transform: translateX(0);
+            }
+        }
+    }
+}

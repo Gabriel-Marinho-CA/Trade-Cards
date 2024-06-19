@@ -1,0 +1,25 @@
+.user-add-cards-page {
+    margin-top: 3rem;
+
+    h1 {
+        padding-bottom: 1rem;
+    }
+
+    .all-collection-cards {
+        ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 250px));
+            grid-gap: 2rem;
+        }
+
+        .show-more-btn {
+            margin-top: 1.5rem;
+
+            button {
+                padding: .4rem;
+                font-size: 1.1rem;
+                font-weight: bold;
+            }
+        }
+    }
+}

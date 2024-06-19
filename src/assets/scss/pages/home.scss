@@ -1,0 +1,39 @@
+@import "../components/home/showcase";
+
+
+.main-banner {
+
+    img {
+        width: 100%;
+        max-height: 350px;
+
+    }
+}
+
+#trades-home {
+
+    .home-content {
+        padding-top: 3rem;
+
+        h1 {
+            display: flex;
+            align-items: flex-start;
+            gap: .3rem;
+        }
+
+        .show-more-btn {
+            text-align: center;
+            margin-top: 2rem;
+
+            button {
+                width: 100%;
+                max-width: 150px;
+                background: $primary-color;
+                border: none;
+                color: #fff;
+                font-size: 1.4rem;
+                border-radius: 4px;
+            }
+        }
+    }
+}

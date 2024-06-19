@@ -1,0 +1,29 @@
+.App {
+    margin-bottom: 100px;
+}
+
+.container {
+    width: 100%;
+    margin-inline: auto;
+    max-width: $desktop;
+    padding-inline: $padding-inline;
+}
+
+.btn-primary {
+    text-align: center;
+
+    button {
+        padding: .2rem 0;
+        width: 100%;
+        max-width: 150px;
+        background: $primary-color;
+        border: none;
+        color: #fff;
+        border-radius: 4px;
+        transition: backgroud-color .35s ease;
+
+        &:hover {
+            background-color: $secondary-color;
+        }
+    }
+}

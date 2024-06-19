@@ -1,0 +1,135 @@
+@import "../helpers/mixins";
+@import "../helpers/variables";
+
+.trade-user-page {
+    margin-top: 2rem;
+    position: relative;
+
+    h1 {
+        padding-bottom: 1.5rem;
+        @include Flex($justify-content:space-between);
+
+        @media (max-width:$tablet) {
+            font-size: 1.5rem;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        span {
+            cursor: pointer;
+            @include Flex($gap:.3rem);
+            font-size: 1rem;
+        }
+    }
+
+    .wrapper-all-system-cards {
+        &.active {
+            max-width: calc(100% - 450px);
+        }
+
+        .all-collection-cards {
+
+            ul {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(160px, 250px));
+                grid-gap: 1.5rem;
+
+                @media (max-width:$mobile) {
+                    justify-content: center;
+
+                }
+
+                li {
+                    .card-element {
+                        @media (max-width:$desktopXS) {
+                            display: flex;
+                            flex-direction: column;
+                            height: 100%;
+                            justify-content: space-between;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .side-bar {
+        position: fixed;
+        top: 2rem;
+        right: -500px;
+        background-color: #fff;
+        max-width: 450px;
+        box-shadow: 0px 3px 6px #cecece;
+        transition: transform .35s ease;
+
+        @media (max-width:$mobile) {
+            max-width: 90dvw;
+        }
+
+        &.active {
+            transform: translateX(-500px);
+        }
+
+        .wrapper-user-cards {
+            padding: 1rem;
+
+            header.header-side-bar {
+                h3 {
+                    @include Flex($justify-content: space-between);
+
+                    span {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+
+            .user-cards-collection {
+                margin-top: 1.5rem;
+
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    max-height: 660px;
+                    overflow-y: auto;
+
+                    @media (max-width:$mobile) {
+                        gap: 1rem;
+                    }
+
+                    li {
+                        flex-basis: 33.3%;
+
+                        @media (max-width:$mobile) {
+                            flex-basis: calc(50% - 1rem);
+                        }
+                    }
+                }
+            }
+
+            .confirm-trade {
+                margin-top: 1rem;
+
+                button {
+                    background-color: #1de01d !important;
+                    max-width: 100%;
+                    font-size: 1.15rem;
+                    padding: .5rem 0;
+                }
+            }
+        }
+    }
+
+    .show-more-btn {
+        margin-top: 2.5rem;
+
+        button {
+            padding: .4rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+    }
+}

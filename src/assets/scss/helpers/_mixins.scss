@@ -1,0 +1,85 @@
+@mixin FormDefaultStyle {
+    form {
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                padding-bottom: .3rem;
+                font-size: 0.95rem;
+            }
+
+            input {
+                height: 35px;
+                border-radius: 4px;
+                border: 1px solid #000;
+                padding: .5rem;
+
+                &::placeholder {
+                    color: #9b9b9b;
+                }
+            }
+
+            .erroForm {
+                padding-top: .5rem;
+
+                &:has(p[data-message=""]) {
+                    padding-top: 0;
+                }
+
+                p {
+                    color: red;
+                }
+            }
+        }
+
+        .forget-password {
+            text-align: end;
+
+            a {
+                color: #0059ff;
+                text-decoration: underline;
+                font-size: .85rem;
+            }
+        }
+
+        .submit-area {
+            button {
+                width: 100%;
+                background: $primary-color;
+                border: none;
+                color: #fff;
+                font-size: 1.2rem;
+                padding: .3rem;
+                border-radius: 4px;
+                transition: background-color .3s ease;
+
+                &:hover {
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+}
+
+@mixin Flex($align-items:center, $justify-content: flex-start, $gap:0) {
+    display: flex;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    gap: $gap;
+}
+
+@mixin HasMoreText ($h:auto, $line-clamp:2, $direction:vertical) {
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: $h;
+    height: $h;
+    -webkit-line-clamp: $line-clamp;
+    -webkit-box-orient: $direction;
+}

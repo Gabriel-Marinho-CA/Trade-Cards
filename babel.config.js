@@ -1,0 +1,21 @@
+module.exports = {
+    presets: [
+        [
+            '@babel/preset-env', {
+                targets: {
+                    esmodules: true
+                }
+            }
+        ],
+        [
+            '@babel/preset-react', {
+                runtime: 'automatic'
+            }
+        ],
+        '@babel/preset-typescript',
+    ],
+    plugins: [
+        'babel-plugin-transform-import-meta',
+        "babel-plugin-transform-vite-meta-env"
+    ]
+}

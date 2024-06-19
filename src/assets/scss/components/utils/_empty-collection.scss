@@ -1,0 +1,15 @@
+@import "../../helpers/mixins";
+
+.empty-collection {
+    padding: 1rem;
+    text-align: center;
+
+    div {
+        padding-top: .35rem;
+        @include Flex($justify-content:center, $gap:.2rem);
+
+        a {
+            font-weight: bold;
+        }
+    }
+}
